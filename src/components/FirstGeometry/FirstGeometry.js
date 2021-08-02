@@ -14,29 +14,16 @@ function FirstGeometry() {
     //by default
     const [heightOfTower, setHeightOfTower] = useState(50)
     const [lineVoltage, setLineVoltage] = useState(400*1000)
-    const [typesOfInsulators, setTypesOfInsulators] = useState('Suspension Type')
-    const [typeOfConductors, setTypeOfConductors] = useState('Bundled');
     const [conductorMaterial, setConductorMaterial] = useState('ACSR');
-    const [typeOfConductorSupport, setTypeOfConductorSupport] = useState('Tower');
     const [voltageLevel, setVoltageLevel] = useState('AC')
     const [sizeOfEarthWires, setsizeOfEarthWires] = useState('7/3.66');
     const [groundClearance, setGroundClearance] = useState(15);
-    const [archingHorn, setArchingHorn] = useState('Present');
-    const [lineConfiguration, setLineConfiguration] = useState('Vertical Parallel')
-    const [conductorCrossSectionalArea, setConductorCrossSectionalArea] = useState(5.97)
     const [typeOfCircuits, setTypeOfCircuits] = useState('Double');
     const [earthWire, setEarthWire] = useState('Present')
-    // const [bundledConductors, setBundledConductors] = useState('Triangular')
-    const [conductorSupportLevel, setConductorSupportLevel] = useState('Equal')
-    const [noOfDisc, setNoOfDisc] = useState('37')
-    const [typeOfDamper, setTypeOfDamper] = useState('Stock Bridge Damper')
-    const [loadingFactor, setLoadingFactor] = useState('No')
-    const [guardRing, setGuardRing] = useState('Yes');
     const [temperature, setTemperature] = useState(32);
     const [windPressure, setWindPressure] = useState(68.10);
     const [windVelocity, setWindVelocity] = useState(39);
     const [sizeOfPhaseConductor, setSizeOfPhaseConductor] = useState('54/7/3.53 mm');
-    const [numberOfInsulators, setNumberOfInsulators] = useState(6);
     const [conductorWeight, setConductorWeight] = useState(19.6);
     const [conductorLength, setConductorLength] = useState(200);
     const [Pr, setPr] = useState(200*1000000);
@@ -49,33 +36,7 @@ function FirstGeometry() {
     const [weight, setWeight] = useState(2222.9);
     const [ultimateStrength, setUltimateStrength] = useState(161*1000)
 
-    //input
-    const [lengthOfCrossArm, setLengthOfCrossArm] = useState(0)
-    const [totalNoOfSpacers, setTotalNoOfSpacers] = useState(0);
-    const [spacingBetweenBundledConductors, setSpacingBetweenBundledConductors] = useState(0)
-
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-    // const [heightOfTower, setHeightOfTower] = useState(10)
-
     const result = Math.sqrt(4);
-
-    // const sendMessage = (e) => {
-
-    //     e.preventDefault(); //avoiding from refresh
-    //     setLineVoltage(0)
-    // }
 
     console.log(lineVoltage)
 
@@ -107,16 +68,6 @@ function FirstGeometry() {
 
        //Efficiency
 
-    // Vs, Vr, Is, Ir, Pfs, Pfr, Z(R and X), R(L and A), X(L), Pr 
-
-    //Vr = 400kv
-    //pr = 200MW
-    //pfr = 0.85
-    //Ir known from above values
-
-    const row = 0.00000000001729 //km
-    // const R =  (row*conductorLength)/(5.97*0.000000001)
-
     const R = 0.0547
 
     const R85 = multiply(divide(add(228, 75), add(228, 20)), R) * conductorLength;
@@ -127,13 +78,6 @@ function FirstGeometry() {
     const XL = multiply(2, 3.142, 50, L)*conductorLength       //To be updated with new inductance value
 
     const Z = complex(R85,XL);
-    // const Z = 0.57 //to be updated with imaginart
-    // const a = complex(4, 0);
-    // const b = complex(5, 2)
-    // const com = add(a,b)
-    // const mult = multiply(com, 2)
-    // console.log(mult)
-    // console.log(com)
 
     console.log("Z", Z)
 
@@ -169,9 +113,6 @@ function FirstGeometry() {
     const VsAngle = multiply(atan(divide(Vs.im, Vs.re)),180/3.142);
     console.log("Vsangle", VsAngle);
     
-    // const VsLineMagStar = multiply(sqrt(3),sqrt(add(square(Vs.re), square(Vs.im)))) //start connection
-    // const VsAngleStar = add(VsAngle, 30);
-    // console.log(VsLineMagStar)
       
     const Is = add(multiply(C, Vr),multiply(A, RectIr))
     console.log('Is', Is) 
@@ -206,9 +147,6 @@ function FirstGeometry() {
     const lineEfficiency = format(divide(Pr,add(Pr, multiply(3, square(Ir), R85)))*100, 5);
     console.log(lineEfficiency)
 
-    //Voltage Regulation
-    // const ZMag = sqrt(add(square(Z.re), square(Z.im)));
-    // const YMag = sqrt(add(square(Y.re), square(Y.im)));
     const den = add(1, divide(multiply(Z,Y),2))
     const denMag = sqrt(add(square(den.re), square(den.im)));
     console.log("denMag", denMag)
@@ -368,38 +306,22 @@ function FirstGeometry() {
             <h1 className="parameters__heading">Transmission Line Parameters</h1>
             <div className="sides">
               <div className="geometry__content">
-
-                  {/* <h4>Line Voltage: <input value={lineVoltage} onChange={e => setLineVoltage(e.target.value)} placeholder="Type a message" type="text"/></h4> */}
                 
                   <h4>Line Voltage: <span className="answer">{lineVoltage} V</span> </h4>
                   <h4>Type of Circuits: {typeOfCircuits}</h4>
-                  {/* <h4>Type Of Conductor Support: {typeOfConductorSupport}</h4> */}
                   <h4>Conductor Length: {conductorLength} km</h4>
                   <h4>Conductor Weight: {conductorWeight} N/m</h4>
-                  {/* <h4>Type Of Conductors: {typeOfConductors}</h4> */}
                   <h4>Height of Tower: {heightOfTower} m</h4>
                   <h4>Size of Phase Conductors: {sizeOfPhaseConductor}</h4>
                   <h4>Voltage Level: {voltageLevel}</h4>
-                  {/* <h4>Arcing Horn: {archingHorn}</h4> */}
-                  {/* <h4>Line Configuration: {lineConfiguration}</h4> */}
-                  {/* <h4>Conductor Cross Sectional Area: {conductorCrossSectionalArea} sqcm</h4> */}
                   <h4>Conductor Material: {conductorMaterial}</h4>
                   <h4>Earth Wire: {earthWire}</h4>
                   <h4>Size of Earth Wires: {sizeOfEarthWires} mm</h4>
-                  {/* <h4>Bundled Conductors: {bundledConductors}</h4> */}
-                  {/* <h4>Types Of Insulators: {typesOfInsulators}</h4>
-                  <h4>No of insulator dics in one string: {noOfDisc}</h4>
-                  <h4>Number of Insulators: {numberOfInsulators}</h4> */}
                   <h4>Ground Clearance: {groundClearance} m</h4>
-                  {/* <h4>Loading Factors: {loadingFactor}</h4> */}
-                  {/* <h4>Type of Dampers: {typeOfDamper}</h4> */}
                   <h4>Tower Type: Suspension Tower</h4>
-                  {/* <h4>Vibrations: Resonant</h4> */}
-                  {/* <h4>Guard Ring/Corona Ring: {guardRing}</h4> */}
                   <h4>Wind Pressure:  <input value={windPressure} onChange={e => setWindPressure(e.target.value)} placeholder="Enter Wind Pressure" type="number"/> kg/sqm <br/>(65-70 kg/sqm)</h4>
                   <h4>Wind Velocity: {windVelocity} m/s</h4>
                   <h4>Temperature: {temperature}</h4>
-                  {/* <h4>Spacing between bundled conductors: {spacingBetweenBundledConductors}</h4> */}
                   <h4>Spacing between phase conductors: {interPhaseDistance1}, {interPhaseDistance2}, {outerPhaseDistance} m</h4>
                   <h4>Span:  <input value={span} onChange={e => setSpan(e.target.value)} placeholder="Enter Span" type="number"/> m <br/>(380-400 m)</h4>
                   <br/>

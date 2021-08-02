@@ -1,14 +1,13 @@
 .geometry{
-    background: rgb(0,47,122);
-    background: linear-gradient(90deg, rgba(0,47,122,1) 0%, rgba(194,0,181,1) 100%);
-    height:4000px;
+    background-color: #5C0E2F;
+    height:1900px;
     width: 100vw;
     margin: 0px;
 }
 
 .geometry__content{
     margin: 0px;
-    padding: 40px 10px 10px 30px;
+    padding: 0px 10px 10px 30px;
     color: white;
     overflow-x: hidden;
 }
@@ -20,7 +19,7 @@ h4{
 }
 
 .param__heading{
-    margin-left: 10%;
+    margin-left: 29%;
     color: #fad017;
     font-size: 40px;
     font-weight: 700;
@@ -33,6 +32,7 @@ h4{
 }
 .sides{
     display: flex;
+    margin-top: 40px;
 }
 
 .answer{
@@ -41,14 +41,14 @@ h4{
 }
 
 .chart__section{
-    background-color: rgb(255, 164, 255);
+    background-color: #FEA981;
     margin-top: 50px;
     width: 85vw;
     margin-left: 65px;
     height: 60vh;
     overflow-y: hidden;
     border-radius: 50px;
-    border: 5px solid #002F7A;
+    border: 5px solid #CA0054;
 }
 
 .geometry__chart{
@@ -56,22 +56,22 @@ h4{
     margin-top: 30px;
 }
 .chart__heading{
-    color: #fad017;
+    color: #5C0E2F;
     margin-left: 40%;
     font-size: 45px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .heading {
     float: left;
-    width: 50%;
-    height: 44px;
+    height: 100px;
+    width: 30%;
     line-height: 24px;
     text-align: center;
     margin-bottom: 0px;
     padding: 0px;
     font-weight: normal;
-    color: white;
+    color: #FEA981;
     margin-top: 30px;
     overflow-y: hidden;
 }
@@ -109,14 +109,12 @@ h4{
 
 .active{
    border-bottom: 2px solid #FFA78C;
-   /* border-left: 2px solid #FFA78C;
-   border-right: 2px solid #FFA78C;
-   border-top: 2px solid #FFA78C; */
    pointer-events: none;
 }
 .routes{
-    margin-left: -50px;
     margin-right: 100px;
+    margin-left: 30%;
+    margin-bottom: -70px;
 }
 .topbar{
     flex:1

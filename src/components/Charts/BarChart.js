@@ -10,7 +10,7 @@ function BarChart({title1, title2, value1, value2, title, ylabel}) {
                 datasets: [
                     {
                     label: title,
-                    backgroundColor: '#fad017',
+                    backgroundColor: '#c21e63',
                     data: [value1, value2],
                     },
                 ],
@@ -24,7 +24,7 @@ function BarChart({title1, title2, value1, value2, title, ylabel}) {
                             font: {
                                 size: 15
                             },
-                            color: 'red'
+                            color: '#c21e63'
                         }},
                 },
                 responsive: true,

@@ -1,11 +1,11 @@
 .features{
-    background: black;
+    background: #FEA981;
     width: 500px;
     height: 280px;
     text-align: left;
     margin-right: 300px;
     border-radius: 50px;
-    border: 2px solid #fad017;
+    border: 2px solid #ff2680;
     margin-bottom: 3%;
     margin-left: 7%;
 }
@@ -15,9 +15,9 @@
 }
 
 .features__heading > h2{
-    color: #fad017;
+    color: #5C0E2F;
     text-align: left;
-    margin-bottom: 7%;
+    margin-bottom: 4%;
 }
 
 .features__point{
@@ -26,7 +26,8 @@
 
 }
 .features__point > p{
-    color: white;
+    color: #5C0E2F;
     margin-bottom: 7px;
-    font-size: 20px;
+    font-size: 21px;
+    font-weight: 500;
 }

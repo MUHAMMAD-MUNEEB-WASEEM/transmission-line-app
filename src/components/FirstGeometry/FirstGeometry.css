@@ -1,14 +1,15 @@
 .geometry{
-    background: rgb(0,47,122);
-    background: linear-gradient(90deg, rgba(0,47,122,1) 0%, rgba(194,0,181,1) 100%);
-    height:4000px;
+    /* background: rgb(0,47,122);
+    background: linear-gradient(90deg, rgba(0,47,122,1) 0%, rgba(194,0,181,1) 100%); */
+    background-color: #5C0E2F;
+    height:1900px;
     width: 100vw;
     margin: 0px;
 }
 
 .geometry__content{
     margin: 0px;
-    padding: 40px 10px 10px 30px;
+    padding: 40px 10px 10px 40px;
     color: white;
     overflow-x: hidden;
 }
@@ -16,7 +17,8 @@
 h4{
     margin-top: 15px;
     font-size: 23px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffccb5;
 }
 
 .parameters__heading{
